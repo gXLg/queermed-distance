@@ -7,6 +7,6 @@ Based on data fetched from [Queermed Deutschland](https://queermed-deutschland.d
 
 <div align="center">
   <img src="/imgs/screenshot.png" alt="Screenshot of the project" title="Screenshot of the project" height="600">
-  <br>
+  <br><br>
   <img src="/imgs/preview.png" alt="Discord Embed Preview" title="Discord Embed Preview" height="363">
 </div>
