@@ -1,0 +1,6 @@
+{
+  "ram": 100,
+  "setup": ["git pull", "npm ci"],
+  "record": "queermed-distance.gxlg.dev",
+  "start": "node --max-old-space-size=100 index.js {port}"
+}

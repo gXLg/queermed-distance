@@ -1,0 +1,23 @@
+{
+  "name": "queermed-distance",
+  "version": "1.0.0",
+  "description": "Distance filter for Queermed Germany",
+  "homepage": "https://github.com/gXLg/queermed-distance#readme",
+  "bugs": {
+    "url": "https://github.com/gXLg/queermed-distance/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gXLg/queermed-distance.git"
+  },
+  "license": "MIT",
+  "author": "gXLg",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "nulls": "^2.13.6"
+  }
+}

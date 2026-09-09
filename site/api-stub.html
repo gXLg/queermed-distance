@@ -1,0 +1,17 @@
+<form action="/api/search" null-api>
+  <script null-api>
+    const { search } = require("./lib/data.js");
+    const ERROR = { "success": false, "data": null };
+    const SUCCESS = data => ({ "success": true, data });
+    return (req, res) => {
+      if (req.body.city == null) {
+        return res.json(ERROR);
+      }
+      const result = search(req.body.city, [].concat(req.body.categories ?? []));
+      if (result == null) {
+        return res.json(ERROR);
+      }
+      return res.json(SUCCESS(result));
+    };
+  </script>
+</form>

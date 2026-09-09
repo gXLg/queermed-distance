@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="theme-color" content="#f5f6f8">
+
+  <title>Queermed Deutschland Distance</title>
+  <meta property="og:title" content="Queermed Deutschland Distance" />
+  <meta property="og:description" content="Custom distance search for queer-friendly doctors" />
+  <meta name="twitter:title" content="Queermed Deutschland Distance" />
+  <meta name="twitter:description" content="Custom distance search for queer-friendly doctors" />
+
+  <link rel="icon" sizes="512x512" href="/static/progress-pride-flag-plus-inter.png">
+  <meta property="og:image" content="/static/progress-pride-flag-plus-inter.png" />
+  <meta property="og:image:width" content="64" />
+  <meta property="og:image:height" content="64" />
+  <meta name="twitter:image" content="/static/progress-pride-flag-plus-inter.png" />
+
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<main class="page">
+  <header class="header">
+    <h1>
+      <img src="/static/progress-pride-flag-plus-inter.svg" alt="Progress-Pride Flag + Intersex">
+      Queermed Deutschland Distance
+    </h1>
+    <p>
+      Select your location, select medical categories, press &quot;Search&quot; to show all doctors.
+      The output will contain data fetched from <a href="https://queermed-deutschland.de/en/look-for-recommendations/" target="_blank">Queermed Deutschland</a>,
+      but will be sorted by distance to your selected location. (No Geo-Tracking required.)
+    </p>
+    <p>
+      Made by <a href="https://gXLg.dev" target="_blank">gXLg.dev</a>.
+      This project is open-source and unmonetized: <a href="https://github.com/gXLg/queermed-distance" target="_blank">see GitHub page</a>.
+    <p>
+  </header>
+  <section class="search-box">
+    <div class="filter-grid">
+      <button class="filter" id="cityFilter">
+        <span class="filter-label">Your location</span>
+        <span class="filter-value" id="selectedCity">...</span>
+      </button>
+      <button class="filter" id="categoryFilter">
+        <span class="filter-label">Categories</span>
+        <span class="category-summary" id="categorySummary">...</span>
+      </button>
+    </div>
+    <button class="search-button">Search</button>
+  </section>
+  <section class="results" id="results"></section>
+</main>
+
+<div class="modal-backdrop" id="cityModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 class="modal-title">Choose your city</h2>
+      <button class="close-icon" data-close="cityModal">×</button>
+    </div>
+
+    <div class="modal-content">
+      <div class="input-wrapper">
+        <span class="search-icon">⌕</span>
+        <input class="search-input" id="citySearch" type="search" placeholder="Search cities..." autocomplete="off">
+      </div>
+      <div class="city-list" id="cityList"></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="categoryModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 class="modal-title">Choose categories</h2>
+      <button class="close-icon" data-close="categoryModal"> × </button>
+    </div>
+    <div class="modal-content">
+      <section class="selected-section">
+        <div class="section-title">Selected</div>
+        <div class="selected-categories" id="selectedCategories"></div>
+      </section>
+      <section>
+        <div class="section-title">Categories</div>
+        <div class="input-wrapper">
+          <span class="search-icon">⌕</span>
+          <input class="search-input" id="categorySearch" type="search" placeholder="Search categories..." autocomplete="off">
+        </div>
+        <div class="category-list" id="categoryList"></div>
+      </section>
+    </div>
+    <div class="modal-footer">
+      <button class="done-button" data-close="categoryModal">Done</button>
+    </div>
+  </div>
+</div>
+
+<script src="static/search.js"></script>
+
+</body>
+</html>
